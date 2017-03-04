@@ -61,48 +61,127 @@
                         <label for="txtCustomTblName">Custom Table Name</label>
                         <input type="text" class="form-control" id="txtCustomTblName" placeholder="Enter table name">
                     </div>
-                    <div class="form-group col-md-8">
-                        <label for="txtModelName">Options</label>
+                    <div class="form-group col-md-12">
+                        <label for="txtModelName">Skip</label>
 
                         <div class="form-inline form-group" style="border-color: transparent">
                             <div class="checkbox chk-align">
                                 <label>
-                                    <input type="checkbox" class="flat-red" id="chkDelete"><span
-                                            class="chk-label-margin"> Soft Delete </span>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_migration" value="migration"><span
+                                            class="chk-label-margin"> Migrations </span>
                                 </label>
                             </div>
                             <div class="checkbox chk-align">
                                 <label>
-                                    <input type="checkbox" class="flat-red" id="chkSave"> <span
-                                            class="chk-label-margin">Save Schema</span>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_model" value="model"> <span
+                                            class="chk-label-margin"> Model </span>
                                 </label>
                             </div>
-                            <div class="checkbox chk-align" id="chSwag">
+                            <div class="checkbox chk-align">
                                 <label>
-                                    <input type="checkbox" class="flat-red" id="chkSwagger"> <span
-                                            class="chk-label-margin">Swagger</span>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_controllers" value="controllers"> <span
+                                            class="chk-label-margin"> Controllers </span>
                                 </label>
                             </div>
-                            <div class="checkbox chk-align" id="chTest">
+                            <div class="checkbox chk-align">
                                 <label>
-                                    <input type="checkbox" class="flat-red" id="chkTestCases"> <span
-                                            class="chk-label-margin">Test Cases</span>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_api_controller" value="api_controller"> <span
+                                            class="chk-label-margin"> API Controller </span>
                                 </label>
                             </div>
-                            <div class="checkbox chk-align" id="chDataTable">
+                            <div class="checkbox chk-align">
                                 <label>
-                                    <input type="checkbox" class="flat-red" id="chkDataTable"> <span
-                                            class="chk-label-margin">Datatables</span>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_scaffold_controller" value="scaffold_controller"> <span
+                                            class="chk-label-margin"> Scaffold Controller </span>
                                 </label>
                             </div>
-                            <div class="checkbox chk-align" id="chMigrate">
+                            <div class="checkbox chk-align">
                                 <label>
-                                    <input type="checkbox" class="flat-red" id="chkMigrate"> <span
-                                            class="chk-label-margin">Migrate</span>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_scaffold_requests" value="scaffold_requests"> <span
+                                            class="chk-label-margin"> Scaffold Requests </span>
+                                </label>
+                            </div>
+                            <div class="checkbox chk-align">
+                                <label>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_routes" value="routes"> <span
+                                            class="chk-label-margin"> Routes </span>
+                                </label>
+                            </div>
+                            <div class="checkbox chk-align">
+                                <label>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_api_routes" value="api_routes"> <span
+                                            class="chk-label-margin"> API Routes </span>
+                                </label>
+                            </div>
+                            <div class="checkbox chk-align">
+                                <label>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_scaffold_routes" value="scaffold_routes"> <span
+                                            class="chk-label-margin"> Scaffold Routes </span>
+                                </label>
+                            </div>
+                            <div class="checkbox chk-align">
+                                <label>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_views" value="views"> <span
+                                            class="chk-label-margin"> Views </span>
+                                </label>
+                            </div>
+                            <div class="checkbox chk-align">
+                                <label>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_tests" value="tests"> <span
+                                            class="chk-label-margin"> Tests </span>
+                                </label>
+                            </div>
+                            <div class="checkbox chk-align">
+                                <label>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_menu" value="menu"> <span
+                                            class="chk-label-margin"> Menus </span>
+                                </label>
+                            </div>
+                            <div class="checkbox chk-align">
+                                <label>
+                                    <input type="checkbox" class="flat-red skipOption" id="chkSkip_dump-autoload" value="dump-autoload"> <span
+                                            class="chk-label-margin"> Dump Autoload </span>
                                 </label>
                             </div>
                         </div>
                     </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="txtMisc">Misc</label>
+                        <div class="form-inline form-group" style="border-color: transparent">
+                            <div class="checkbox chk-align"><label>
+                                    <input type="checkbox" class="flat-red miscOption" id="chkMisc_forceMigrate" value="forceMigrate" checked>
+                                    <span class="chk-label-margin"> Run Migrations </span>
+                            </label></div>
+                            <div class="checkbox chk-align"><label>
+                                    <input type="checkbox" class="flat-red miscOption" id="chkMisc_datatables" value="datatables">
+                                    <span class="chk-label-margin"> Data Tables </span>
+                            </label></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="txtMisc">Views</label>
+                        <div class="form-inline form-group" style="border-color: transparent">
+                            <div class="checkbox chk-align"><label>
+                                    <input type="checkbox" class="flat-red" id="chkViews_index" checked>
+                                    <span class="chk-label-margin"> Index </span>
+                            </label></div>
+                            <div class="checkbox chk-align"><label>
+                                    <input type="checkbox" class="flat-red" id="chkViews_create" checked>
+                                    <span class="chk-label-margin"> Create </span>
+                            </label></div>
+                            <div class="checkbox chk-align"><label>
+                                    <input type="checkbox" class="flat-red" id="chkViews_edit" checked>
+                                    <span class="chk-label-margin"> Edit </span>
+                            </label></div>
+                            <div class="checkbox chk-align"><label>
+                                    <input type="checkbox" class="flat-red" id="chkViews_show" checked>
+                                    <span class="chk-label-margin"> Show </span>
+                            </label></div>
+                        </div>
+                    </div>
+
 
                     <div class="form-group col-md-3">
                         <label for="txtPrefix">Prefix</label>
@@ -112,6 +191,11 @@
                     <div class="form-group col-md-1">
                         <label for="txtPaginate">Paginate</label>
                         <input type="number" class="form-control" value="10" id="txtPaginate" placeholder="">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label for="txtPaginate">Primary</label>
+                        <input type="text" class="form-control" value="id" id="txtPrimary" placeholder="">
                     </div>
 
                     <div class="form-group col-md-12" style="margin-top: 7px">
@@ -273,6 +357,7 @@
             });
 
             $("#form").on("submit", function () {
+                // bundle fields
                 var fieldArr = [];
                 $('.item').each(function () {
 
@@ -286,7 +371,8 @@
                     }
 
                     fieldArr.push({
-                        fieldInput: $(this).find('.txtFieldName').val() + ':' + $(this).find('.txtdbType').val(),
+			name: $(this).find('.txtFieldName').val(),
+			dbType: $(this).find('.txtdbType').val(),
                         htmlType: htmlValue,
                         validations: $(this).find('.txtValidation').val(),
                         searchable: $(this).find('.chkSearchable').prop('checked'),
@@ -297,21 +383,53 @@
                     });
                 });
 
+                // join skips
+		var skips = [];
+		$('.skipOption').each(function () {
+                        if( $(this).prop('checked') ){
+                            skips.push( $(this).val() );
+                        }
+		});
+		skips = skips.join(',');
+
+                // join views
+                var views = [];
+                $('.viewOption').each(function () {
+                        if( $(this).prop('checked') ){
+                            views.push( $(this).val() );
+                        }
+                });
+                views = views.join(',');
+
+
                 var data = {
-                    modelName: $('#txtModelName').val(),
                     commandType: $('#drdCommandType').val(),
-                    tableName: $('#txtCustomTblName').val(),
-                    prefix: $('#txtPrefix').val(),
-                    paginate: $('#txtPaginate').val(),
-                    migrate: $('#chkMigrate').prop('checked'),
-                    options: {
-                        softDelete: $('#chkDelete').prop('checked'),
-                        save: $('#chkSave').prop('checked'),
-                        swagger: $('#chkSwagger').prop('checked'),
-                        tests: $('#chkTestCases').prop('checked'),
-                        datatables: $('#chkDataTable').prop('checked')
-                    },
-                    fields: fieldArr
+                    model: $('#txtModelName').val(),
+                    fields: fieldArr,
+
+                    GeneratorConfig: {
+                        options: {
+                            "tableName": $('#txtCustomTblName').val(),
+                            "views": views,
+                            "skip": skips,
+                            "prefix": $('#txtPrefix').val(),
+                            "paginate": $('#txtPaginate').val(),
+                            "primary": $('#txtPrimary').val(),
+                            "datatables": $('#chkMisc_datatables').prop('checked'),
+                            "save": $('#chkSave').prop('checked')
+                        },
+                        extra: {
+                            forceMigrate: $('#chkMisc_forceMigrate').prop('checked')
+                        },
+                        addOns: {
+                        }
+                    }
+                    // hard reference: ./vendor/infyomlabs/generator-builder/src/Controllers/GeneratorBuilderController.php
+
+                    //softDelete: $('#chkSoftDelete').prop('checked'),
+                    //migrate: $('#chkMigrate').prop('checked'),
+                    //swagger: $('#chkSwagger').prop('checked'),
+                    //tests: $('#chkTestCases').prop('checked'),
                 };
 
                 data['_token'] = $('#token').val();

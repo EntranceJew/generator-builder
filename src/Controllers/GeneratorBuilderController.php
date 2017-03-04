@@ -3,7 +3,7 @@
 namespace InfyOm\GeneratorBuilder\Controllers;
 
 use App\Http\Controllers\Controller;
-use Artisan;
+use Illuminate\Support\Facades\Artisan;
 use File;
 use InfyOm\GeneratorBuilder\Requests\BuilderGenerateRequest;
 use Response;
@@ -24,12 +24,15 @@ class GeneratorBuilderController extends Controller
     {
         $data = $request->all();
 
-        $res = Artisan::call($data['commandType'], [
-            'model' => $data['modelName'],
-            '--jsonFromGUI' => json_encode($data)
-        ]);
+	$callData = array(
+		'model' => $data['model'],
+		'--jsonFromGUI' => json_encode($data)
+	);
 
-        return Response::json("Files created successfully");
+        Artisan::call($data['commandType'], $callData);
+	$res = Artisan::output();
+
+        return Response::json("Files created successfully. " . $res);
     }
 
 //    public function availableSchema()
